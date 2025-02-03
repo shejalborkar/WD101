@@ -1,0 +1,24 @@
+document.getElementById('userForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting the traditional way
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const password = document.getElementById('password').value;
+    const dob = document.getElementById('dob').value;
+    const message = document.getElementById('message').value;
+    const terms = document.getElementById('terms').checked;
+
+    const userData = {
+        name: name,
+        email: email,
+        phone: phone,
+        password: password,
+        dob: dob,
+        message: message,
+        terms: terms
+    };
+
+    localStorage.setItem('userData', JSON.stringify(userData));
+    alert('Data saved to local storage!');
+});
